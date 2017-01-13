@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>2017-09-1--01-10-09.png</file>
+        <file>SAN.png</file>
+        <file>table (1).sqlite</file>
+        <file>2017-09-1--01-10-09a.png</file>
+    </qresource>
+</RCC>

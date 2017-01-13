@@ -1,0 +1,15 @@
+<<<<<<< HEAD
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>SAN.png</file>
+        <file>untitled1/login.sqlite</file>
+    </qresource>
+</RCC>
+=======
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>SAN.png</file>
+        <file>untitled1/login.sqlite</file>
+    </qresource>
+</RCC>
+>>>>>>> origin/master
