@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>888</width>
-    <height>511</height>
+    <width>872</width>
+    <height>540</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -236,11 +236,6 @@ background-color: rgb(167, 167, 167);
            <zorder>dateEdit</zorder>
            <zorder>label_5</zorder>
            <zorder>lineEdit_2</zorder>
-           <zorder>label_6</zorder>
-           <zorder>lineEdit_3</zorder>
-           <zorder>label_6</zorder>
-           <zorder>lineEdit_3</zorder>
-           <zorder></zorder>
            <zorder>SearchBar_staff</zorder>
            <zorder>ITEMS_NAME</zorder>
            <zorder>label_7</zorder>
@@ -249,10 +244,8 @@ background-color: rgb(167, 167, 167);
            <zorder>lineEdit_5</zorder>
            <zorder>label_6</zorder>
            <zorder>lineEdit_3</zorder>
-           <zorder></zorder>
            <zorder>lineEdit_6</zorder>
            <zorder>label_9</zorder>
-           <zorder>graphicsView</zorder>
            <zorder>pushButton</zorder>
           </widget>
          </item>

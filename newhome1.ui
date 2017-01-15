@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>792</width>
-    <height>1006</height>
+    <width>761</width>
+    <height>866</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -41,8 +41,8 @@
          <enum>QFrame::Sunken</enum>
         </property>
         <layout class="QGridLayout" name="gridLayout_4">
-         <item row="1" column="0">
-          <widget class="QPushButton" name="AddDrug">
+         <item row="0" column="0">
+          <widget class="QPushButton" name="UpdateData">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -52,13 +52,15 @@
            <property name="font">
             <font>
              <family>Comic Sans MS</family>
-             <pointsize>7</pointsize>
              <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(231, 231, 231);</string>
+           </property>
            <property name="text">
-            <string>ADD NEW DRUG</string>
+            <string>UPDATE DATA</string>
            </property>
           </widget>
          </item>
@@ -83,8 +85,8 @@
            </property>
           </widget>
          </item>
-         <item row="0" column="0">
-          <widget class="QPushButton" name="UpdateData">
+         <item row="1" column="0">
+          <widget class="QPushButton" name="AddDrug">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -94,15 +96,39 @@
            <property name="font">
             <font>
              <family>Comic Sans MS</family>
+             <pointsize>7</pointsize>
              <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
+           <property name="text">
+            <string>ADD NEW DRUG</string>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="0">
+          <widget class="QPushButton" name="GTS_1">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <family>Comic Sans MS</family>
+             <pointsize>12</pointsize>
+             <weight>9</weight>
+             <italic>false</italic>
+             <bold>false</bold>
+            </font>
+           </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgb(231, 231, 231);</string>
+            <string notr="true">background-color: rgb(231, 231, 231);
+font: 75 12pt &quot;Comic Sans MS&quot;;</string>
            </property>
            <property name="text">
-            <string>UPDATE DATA</string>
+            <string>GO TO STORE</string>
            </property>
           </widget>
          </item>
@@ -150,8 +176,15 @@
            </property>
           </widget>
          </item>
-         <item row="8" column="0">
-          <widget class="QPushButton" name="GTS_1">
+         <item row="11" column="0">
+          <widget class="QPushButton" name="BackButton_1">
+           <property name="text">
+            <string>BACK</string>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="0">
+          <widget class="QPushButton" name="VS_1">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -161,18 +194,15 @@
            <property name="font">
             <font>
              <family>Comic Sans MS</family>
-             <pointsize>12</pointsize>
-             <weight>9</weight>
-             <italic>false</italic>
-             <bold>false</bold>
+             <weight>75</weight>
+             <bold>true</bold>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgb(231, 231, 231);
-font: 75 12pt &quot;Comic Sans MS&quot;;</string>
+            <string notr="true">background-color: rgb(231, 231, 231);</string>
            </property>
            <property name="text">
-            <string>GO TO STORE</string>
+            <string>VIEW SALES</string>
            </property>
           </widget>
          </item>
@@ -218,49 +248,6 @@ font: 75 12pt &quot;Comic Sans MS&quot;;</string>
            </property>
           </widget>
          </item>
-         <item row="9" column="0">
-          <widget class="QPushButton" name="VS_1">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="font">
-            <font>
-             <family>Comic Sans MS</family>
-             <weight>75</weight>
-             <bold>true</bold>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(231, 231, 231);</string>
-           </property>
-           <property name="text">
-            <string>VIEW SALES</string>
-           </property>
-          </widget>
-         </item>
-         <item row="11" column="0">
-          <widget class="QPushButton" name="BackButton_1">
-           <property name="text">
-            <string>BACK</string>
-           </property>
-          </widget>
-         </item>
-         <item row="10" column="0">
-          <widget class="QPushButton" name="LogOut">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string>LOG OUT</string>
-           </property>
-          </widget>
-         </item>
          <item row="3" column="0">
           <widget class="QPushButton" name="DeleteDrug">
            <property name="sizePolicy">
@@ -279,6 +266,19 @@ font: 75 12pt &quot;Comic Sans MS&quot;;</string>
            </property>
            <property name="text">
             <string>DELETE FROM STORE</string>
+           </property>
+          </widget>
+         </item>
+         <item row="10" column="0">
+          <widget class="QPushButton" name="LogOut">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>LOG OUT</string>
            </property>
           </widget>
          </item>
@@ -427,7 +427,7 @@ font: 75 12pt &quot;Comic Sans MS&quot;;</string>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="checkBox_6">
+               <widget class="QCheckBox" name="checkBox2">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                   <horstretch>0</horstretch>
@@ -440,7 +440,7 @@ font: 75 12pt &quot;Comic Sans MS&quot;;</string>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="checkBox_4">
+               <widget class="QCheckBox" name="checkBox3">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                   <horstretch>0</horstretch>
@@ -453,7 +453,7 @@ font: 75 12pt &quot;Comic Sans MS&quot;;</string>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="checkBox_3">
+               <widget class="QCheckBox" name="checkBox4">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                   <horstretch>0</horstretch>
@@ -466,7 +466,7 @@ font: 75 12pt &quot;Comic Sans MS&quot;;</string>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="checkBox_2">
+               <widget class="QCheckBox" name="checkBox5">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                   <horstretch>0</horstretch>
@@ -479,7 +479,7 @@ font: 75 12pt &quot;Comic Sans MS&quot;;</string>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="checkBox_5">
+               <widget class="QCheckBox" name="checkBox6">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                   <horstretch>0</horstretch>
@@ -538,12 +538,28 @@ font: 75 12pt &quot;Comic Sans MS&quot;;</string>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
                </property>
+               <property name="clearButtonEnabled">
+                <bool>true</bool>
+               </property>
               </widget>
              </item>
              <item>
               <widget class="QPushButton" name="Select">
                <property name="text">
                 <string>SELECT</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="DelButton">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string>DELETE STAFF</string>
                </property>
               </widget>
              </item>
@@ -934,6 +950,9 @@ font: 75 12pt &quot;Comic Sans MS&quot;;</string>
                <property name="text">
                 <string>TextLabel</string>
                </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
               </widget>
              </item>
              <item>
@@ -941,8 +960,8 @@ font: 75 12pt &quot;Comic Sans MS&quot;;</string>
                <property name="font">
                 <font>
                  <family>Comic Sans MS</family>
-                 <weight>75</weight>
-                 <bold>true</bold>
+                 <weight>50</weight>
+                 <bold>false</bold>
                 </font>
                </property>
                <property name="inputMask">
@@ -957,6 +976,133 @@ font: 75 12pt &quot;Comic Sans MS&quot;;</string>
               </widget>
              </item>
             </layout>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="groupBox_2">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="title">
+            <string/>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_13">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_8">
+              <item>
+               <widget class="QLabel" name="newUsername">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Comic Sans MS</family>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>NEW USERNAME:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="newUsernameText">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Comic Sans MS</family>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="clearButtonEnabled">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_7">
+              <item>
+               <widget class="QLabel" name="newPassword">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Comic Sans MS</family>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>PASSWORD:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="newPasswordText">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Comic Sans MS</family>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="clearButtonEnabled">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_6">
+           <item>
+            <spacer name="horizontalSpacer_5">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QPushButton" name="ModifyDrugButton">
+             <property name="text">
+              <string>MODIFY</string>
+             </property>
+            </widget>
            </item>
           </layout>
          </item>
@@ -985,19 +1131,6 @@ font: 75 12pt &quot;Comic Sans MS&quot;;</string>
              </property>
              <property name="text">
               <string>ADD TO STAFF</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="DelButton">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="text">
-              <string>DELETE STAFF</string>
              </property>
             </widget>
            </item>
@@ -1089,6 +1222,9 @@ font: 75 12pt &quot;Comic Sans MS&quot;;</string>
         <zorder>Permission_1</zorder>
         <zorder>IDLabel</zorder>
         <zorder>groupBox</zorder>
+        <zorder>ModifyDrugButton</zorder>
+        <zorder>horizontalSpacer_5</zorder>
+        <zorder>groupBox_2</zorder>
        </widget>
       </item>
      </layout>

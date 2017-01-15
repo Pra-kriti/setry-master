@@ -15,11 +15,13 @@ newhome1::newhome1(QWidget *parent) :
     modifySelectionHide();
   //  ui->tableView_1->AdjustToContentsOnFirstShow();
     ui->groupBox->hide();
+    ui->groupBox_2->hide();
     ui->l9->hide();
     ui->e9->hide();
     ui->AddDrug->hide();
     ui->DeleteDrug->hide();
     ui->ModifyDrug->hide();
+    ui->ModifyDrugButton->hide();
     ui->DelButton->hide();
     ui->Permission_1->hide();
     ui->AddStaff->hide();
@@ -132,9 +134,13 @@ void newhome1::on_GTS_1_clicked()
     ui->e9->hide();
     ui->BackButton_1->show();
     ui->UpdateData->hide();
+    ui->ModifyDrugButton->hide();
     ui->ViewStaff->hide();
     ui->VS_1->hide();
     update2();
+    ui->groupBox->hide();
+
+
 }
 
 void newhome1::update2()
@@ -231,6 +237,7 @@ void newhome1::on_SearchButton_1_clicked()
 void newhome1::on_ViewStaff_clicked()
 {
     selector=2;
+    ui->groupBox_2->hide();
     ui->BackButton_1->show();
     ui->ExistStaff->show();
     ui->NewStaff->show();
@@ -249,6 +256,7 @@ void newhome1::on_ExistStaff_clicked()
     ui->AddStaff->hide();
     ui->DelButton->hide();
     ui->Permission_1->hide();
+    ui->groupBox_2->hide();
     selector=1;
     ui->tableView_1->show();
     ui->SearchBar_3->setPlaceholderText("First Name");
@@ -282,6 +290,7 @@ void newhome1::on_NewStaff_clicked()
     modifySelectionHide();
     ui->Permission_1->show();
     modifyFormShow();
+    ui->groupBox_2->show();
     ui->DelButton->hide();
     ui->BackButton_1->show();
     ui->tableView_1->hide();
@@ -294,7 +303,10 @@ void newhome1::on_NewStaff_clicked()
 }
 
 void newhome1::on_AddStaff_clicked()
-{if(selector==2 or selector==4)
+{
+    ui->Permission_1->hide();
+    ui->AddStaff->hide();
+    if(selector==2 or selector==4)
     {
         ID= ui->e1->text();
         FName= ui->e2->text();
@@ -304,20 +316,29 @@ void newhome1::on_AddStaff_clicked()
         Sex= ui->e6->text();
         Contact= ui->e7->text();
         Salespoint= ui->e8->text();
+        NewUser=ui->newUsernameText->text();
+        NewPass=ui->newPasswordText->text();
 
          Widget conn;
          conn.connOpen();
          if(!conn.connOpen()){qDebug()<<"bhaena";}
              QSqlQuery *qry=new QSqlQuery(conn.myDB);
             if(selector==2)
-             qry->prepare("INSERT INTO [staff] (ID, firstname, lastname, address, sex, age,contact,salespoint) VALUES (\'"+ID+"\',\'"+FName+"\',\'"+LName+"\',\'"+Address+"\',\'"+Sex+"\',\'"+Age+"\',\'"+Contact+"\',\'"+Salespoint+"\')");
+            {
+
+                qry->prepare("INSERT INTO [staff] (ID, firstname, lastname, address, sex, age,contact,salespoint) VALUES (\'"+ID+"\',\'"+FName+"\',\'"+LName+"\',\'"+Address+"\',\'"+Sex+"\',\'"+Age+"\',\'"+Contact+"\',\'"+Salespoint+"\')");
+                qry->exec();
+                qry->prepare("INSERT INTO login (username,password,role) VALUES (\'"+NewUser+"\',\'"+NewPass+"\',\'staff\')");
+                qry->exec();
+            }
             else if(selector==4)
             {
                 qDebug()<<"eta";
                 qry->prepare("UPDATE [staff] SET ID=\'"+ID+"\', firstname=\'"+FName+"\', lastname=\'"+LName+"\', address=\'"+Address+"\', sex=\'"+Sex+"\', age=\'"+Age+"\',contact=\'"+Contact+"\',salespoint=\'"+Salespoint+"\' WHERE ID=\'"+modID+"\'");
+                qry->exec();
 
             }
-            qry->exec();
+
              conn.connClose();
         on_ExistStaff_clicked();
     }
@@ -388,6 +409,7 @@ void newhome1::on_ModifyStaff_clicked()
     ui->Select->show();
     ui->IDField->show();
     ui->IDLabel->show();
+    ui->Select->setText("MODIFY");
     selectorUpdate=1;
 }
 
@@ -493,6 +515,7 @@ void newhome1::on_DelButton_clicked()
 {
      modifySelectionHide();
      modifyFormHide();
+      ui->groupBox->hide();
      modID = ui->IDField->text();
      Widget conn;
      conn.connOpen();
@@ -529,7 +552,9 @@ void newhome1::on_UpdateData_clicked()
 
     ui->ViewStaff->hide();
     ui->GTS_1->hide();
+     ui->groupBox->hide();
     ui->VS_1->hide();
+    ui->ModifyDrugButton->hide();
     ui->BackButton_1->show();
     ui->InfoLabel_1->hide();
     ui->AddDrug->show();
@@ -548,6 +573,7 @@ void newhome1::on_ModifyDrug_clicked()
     ui->IDLabel->show();
     ui->IDLabel->setText("ENTER THE ID OF THE MEDICINE TO BE MODIFIED:: ");
     ui->IDField->show();
+    ui->ModifyDrugButton->hide();
     ui->Select->show();
 }
 
@@ -556,6 +582,7 @@ void newhome1::on_DeleteDrug_clicked()
     selectorUpdate=3;
     on_GTS_1_clicked();
     ui->Permission_1->hide();
+    ui->ModifyDrugButton->hide();
     ui->AddStaff->hide();
     ui->UpdateData->show();
     ui->IDLabel->show();
@@ -569,6 +596,7 @@ void newhome1::on_AddDrug_clicked()
     selector=5;
     modifySelectionHide();
     ui->Permission_1->show();
+    ui->ModifyDrugButton->hide();
     ui->Permission_1->setText("Enter the new drug profile:");
     modifyFormShow();
     ui->l9->show();
@@ -593,4 +621,129 @@ void newhome1::on_AddDrug_clicked()
      ui->SearchLabel_1->hide();
      ui->SearchButton_1->hide();
      ui->AddStaff->show();
+}
+
+void newhome1::on_selector_clicked()
+{
+    ui->groupBox->hide();
+    ui->ModifyDrugButton->show();
+    ui->Permission_1->hide();
+    if(ui->checkBox->isChecked())
+    {
+        field.append("a");
+    }
+    if(ui->checkBox2->isChecked())
+    {
+        field.append("b");
+    }
+    if(ui->checkBox3->isChecked())
+    {
+        field.append("c");
+    }
+    if(ui->checkBox4->isChecked())
+    {
+        field.append("d");
+    }
+    if(ui->checkBox5->isChecked())
+    {
+        field.append("e");
+    }
+    if(ui->checkBox6->isChecked())
+    {
+        field.append("f");
+    }
+    for (int i=0;i<field.length();i++)
+    {
+        if(field.at(i)=='a')
+        {
+            ui->l1->show();
+            ui->l1->setText("QUANTITY");
+            ui->e1->show();
+        }
+        else if(field.at(i)=='b')
+        {
+            ui->l2->show();
+            ui->l2->setText("LOCATION NAME");
+            ui->e2->show();
+        }
+        else if(field.at(i)=='c')
+        {
+            ui->l3->show();
+            ui->l3->setText("CPR");
+            ui->e3->show();
+        }
+        else if(field.at(i)=='d')
+        {
+            ui->l4->show();
+            ui->l4->setText("SPR");
+            ui->e4->show();
+        }
+        else if(field.at(i)=='e')
+        {
+            ui->l5->show();
+            ui->l5->setText("EXPIRY DATE");
+            ui->e5->show();
+        }
+        else if(field.at(i)=='f')
+        {
+            ui->l6->show();
+            ui->l6->setText("ITEMS NAME");
+            ui->e6->show();
+        }
+        else{}
+    }
+
+}
+
+void newhome1::on_ModifyDrugButton_clicked()
+{
+    Widget conn;
+    conn.connOpen();
+    QSqlQuery *qry=new QSqlQuery(conn.myDB);
+
+
+    if (ui->l1->isVisible())
+    {
+        Quantity=ui->e1->text();
+        qry->prepare("UPDATE [table] SET QUANTITY=\'"+Quantity+"\' WHERE ID=\'"+modID+"\'");
+        qry->exec();
+    }
+    if (ui->l2->isVisible())
+    {
+        Location_Name=ui->e2->text();
+        qry->prepare("UPDATE [table] SET LOCATION_NAME=\'"+Location_Name+"\' WHERE ID=\'"+modID+"\'");
+        qry->exec();
+    }
+    if (ui->l3->isVisible())
+    {
+        CPR=ui->e3->text();
+        qry->prepare("UPDATE [table] SET CP_RATE=\'"+CPR+"\' WHERE ID=\'"+modID+"\'");
+        qry->exec();
+        qry->prepare("UPDATE [table] SET CP_AMOUNT=CP_RATE*QUANTITY WHERE ID=\'"+modID+"\'");
+        qry->exec();
+    }
+    if (ui->l4->isVisible())
+    {
+        SPR=ui->e4->text();
+        qry->prepare("UPDATE [table] SET SP_RATE=\'"+SPR+"\' WHERE ID=\'"+modID+"\'");
+
+        qry->exec();
+        qry->prepare("UPDATE [table] SET SP_AMOUNT=SP_RATE*QUANTITY WHERE ID=\'"+modID+"\'");
+        qry->exec();
+    }
+    if (ui->l5->isVisible())
+    {
+        ExpDate=ui->e5->text();
+        qry->prepare("UPDATE [table] SET EXPDATE=\'"+ExpDate+"\' WHERE ID=\'"+modID+"\'");
+        qry->exec();
+    }
+    if (ui->l6->isVisible())
+    {
+        Itemsname=ui->e6->text();
+        qry->prepare("UPDATE [table] SET ITEMSNAME_1=\'"+Itemsname+"\' WHERE ID=\'"+modID+"\'");
+        qry->exec();
+    }
+    conn.connClose();
+
+    on_GTS_1_clicked();
 }

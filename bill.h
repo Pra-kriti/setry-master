@@ -1,7 +1,7 @@
 #ifndef BILL_H
 #define BILL_H
 #include "widget.h"
-#include "newhome.h"
+#include "newhome2.h"
 #include <QDialog>
 
 namespace Ui {

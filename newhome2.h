@@ -1,7 +1,7 @@
 
 #ifndef NEWHOME2_H
 #define NEWHOME2_H
-
+#include "widget.h"
 #include <QWidget>
 
 namespace Ui {
