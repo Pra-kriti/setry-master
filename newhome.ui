@@ -183,6 +183,19 @@ background-color: rgb(167, 167, 167);
            </property>
           </widget>
          </item>
+         <item row="3" column="0" colspan="3">
+          <widget class="QPushButton" name="ChangeSuper">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>CHANGE SUPERVISOR</string>
+           </property>
+          </widget>
+         </item>
          <item row="5" column="0" colspan="3">
           <widget class="QPushButton" name="VS">
            <property name="sizePolicy">
@@ -206,23 +219,23 @@ background-color: rgb(167, 167, 167);
            </property>
           </widget>
          </item>
-         <item row="3" column="0" colspan="3">
-          <widget class="QPushButton" name="ChangeSuper">
+         <item row="7" column="0" colspan="3">
+          <widget class="QPushButton" name="BackButton">
+           <property name="text">
+            <string>BACK</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="0" colspan="3">
+          <widget class="QPushButton" name="LogOut_1">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+            <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
            <property name="text">
-            <string>CHANGE SUPERVISOR</string>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="0" colspan="3">
-          <widget class="QPushButton" name="BackButton">
-           <property name="text">
-            <string>BACK</string>
+            <string>LOG OUT</string>
            </property>
           </widget>
          </item>

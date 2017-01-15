@@ -35,6 +35,8 @@ private slots:
 
     void on_No_clicked();
 
+    void on_LogOut_1_clicked();
+
 public slots:
     void on_ExistSuper_clicked();
 

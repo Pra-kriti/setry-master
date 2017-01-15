@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>813</width>
-    <height>382</height>
+    <width>888</width>
+    <height>511</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -75,8 +75,8 @@ background-color: rgb(167, 167, 167);
    </item>
    <item row="1" column="0">
     <widget class="QWidget" name="widget" native="true">
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
        <widget class="QFrame" name="frame_2">
         <property name="sizePolicy">
          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
@@ -96,48 +96,185 @@ background-color: rgb(167, 167, 167);
         <property name="frameShadow">
          <enum>QFrame::Sunken</enum>
         </property>
-        <layout class="QGridLayout" name="gridLayout_2">
-         <item row="1" column="0" colspan="2">
+        <layout class="QGridLayout" name="gridLayout_4">
+         <item row="0" column="1" rowspan="2">
+          <widget class="QTableView" name="tableView_1"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QFrame" name="frame">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_2">
+            <item row="0" column="0" colspan="3">
+             <widget class="QLabel" name="label_2">
+              <property name="styleSheet">
+               <string notr="true">font: 75 14pt &quot;Comic Sans MS&quot;;</string>
+              </property>
+              <property name="text">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600; text-decoration: underline;&quot;&gt;ENTER THE DETAILS FOR BILLING PURPOSES:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_3">
+              <property name="text">
+               <string>Bill No.:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="lineEdit"/>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_4">
+              <property name="text">
+               <string>Date:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QDateEdit" name="dateEdit"/>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="label_5">
+              <property name="text">
+               <string>Pan No.:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLineEdit" name="lineEdit_2"/>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="label_6">
+              <property name="text">
+               <string>Staff:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QLineEdit" name="lineEdit_3"/>
+            </item>
+            <item row="5" column="0">
+             <widget class="QLabel" name="label_9">
+              <property name="text">
+               <string>Patient's Name: </string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="1">
+             <widget class="QLineEdit" name="lineEdit_6"/>
+            </item>
+            <item row="6" column="0" colspan="2">
+             <widget class="QLineEdit" name="ITEMS_NAME">
+              <property name="styleSheet">
+               <string notr="true">font: 75 12pt &quot;Comic Sans MS&quot;;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="dragEnabled">
+               <bool>false</bool>
+              </property>
+              <property name="placeholderText">
+               <string notr="true">ITEMS_NAME</string>
+              </property>
+              <property name="clearButtonEnabled">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="2">
+             <widget class="QPushButton" name="SearchBar_staff">
+              <property name="styleSheet">
+               <string notr="true">font: 75 12pt &quot;Comic Sans MS&quot;;</string>
+              </property>
+              <property name="text">
+               <string>SEARCH</string>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="0">
+             <widget class="QLabel" name="label_7">
+              <property name="text">
+               <string>Quantity:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="1">
+             <widget class="QLineEdit" name="lineEdit_4"/>
+            </item>
+            <item row="8" column="0">
+             <widget class="QLabel" name="label_8">
+              <property name="text">
+               <string>Discount:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="1">
+             <widget class="QLineEdit" name="lineEdit_5"/>
+            </item>
+            <item row="9" column="1">
+             <widget class="QPushButton" name="pushButton">
+              <property name="text">
+               <string>CREATE BILL</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+           <zorder>label_2</zorder>
+           <zorder>label_3</zorder>
+           <zorder>lineEdit</zorder>
+           <zorder>label_4</zorder>
+           <zorder>dateEdit</zorder>
+           <zorder>label_5</zorder>
+           <zorder>lineEdit_2</zorder>
+           <zorder>label_6</zorder>
+           <zorder>lineEdit_3</zorder>
+           <zorder>label_6</zorder>
+           <zorder>lineEdit_3</zorder>
+           <zorder></zorder>
+           <zorder>SearchBar_staff</zorder>
+           <zorder>ITEMS_NAME</zorder>
+           <zorder>label_7</zorder>
+           <zorder>lineEdit_4</zorder>
+           <zorder>label_8</zorder>
+           <zorder>lineEdit_5</zorder>
+           <zorder>label_6</zorder>
+           <zorder>lineEdit_3</zorder>
+           <zorder></zorder>
+           <zorder>lineEdit_6</zorder>
+           <zorder>label_9</zorder>
+           <zorder>graphicsView</zorder>
+           <zorder>pushButton</zorder>
+          </widget>
+         </item>
+         <item row="0" column="0">
           <widget class="QGraphicsView" name="graphicsView">
            <property name="styleSheet">
             <string notr="true">background-image: url(:/new/prefix1/2017-09-1--01-10-09a.png);</string>
            </property>
           </widget>
          </item>
-         <item row="2" column="1">
-          <widget class="QPushButton" name="SearchBar_staff">
-           <property name="styleSheet">
-            <string notr="true">font: 75 12pt &quot;Comic Sans MS&quot;;</string>
-           </property>
-           <property name="text">
-            <string>SEARCH</string>
-           </property>
-          </widget>
-         </item>
          <item row="2" column="0">
-          <widget class="QLineEdit" name="ITEMS_NAME">
-           <property name="styleSheet">
-            <string notr="true">font: 75 12pt &quot;Comic Sans MS&quot;;</string>
+          <widget class="QPushButton" name="LogOut2">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
            </property>
            <property name="text">
-            <string/>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-           <property name="dragEnabled">
-            <bool>false</bool>
-           </property>
-           <property name="placeholderText">
-            <string notr="true">ITEMS_NAME</string>
-           </property>
-           <property name="clearButtonEnabled">
-            <bool>false</bool>
+            <string>LOG OUT</string>
            </property>
           </widget>
-         </item>
-         <item row="1" column="2" rowspan="2">
-          <widget class="QTableView" name="tableView_1"/>
          </item>
         </layout>
        </widget>

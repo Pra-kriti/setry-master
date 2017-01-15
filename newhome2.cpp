@@ -1,6 +1,7 @@
 #include <QSqlQueryModel>
 #include <widget.h>
 #include "newhome2.h"
+#include "bill.h"
 #include "ui_newhome2.h"
 
 newhome2::newhome2(QWidget *parent) :
@@ -53,4 +54,18 @@ void newhome2::on_SearchBar_staff_clicked()
     ui->tableView_1->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     conn.connClose();
     qDebug()<<(modal->rowCount());
+}
+
+void newhome2::on_LogOut2_clicked()
+{
+    Widget *wid=new Widget;
+    this->close();
+    wid->showMaximized();
+}
+
+void newhome2::on_pushButton_clicked()
+{
+    bill* bdail=new bill;
+    bdail->setModal(true);
+    bdail->exec();
 }

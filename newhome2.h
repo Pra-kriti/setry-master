@@ -19,6 +19,10 @@ public:
 private slots:
     void on_SearchBar_staff_clicked();
 
+    void on_LogOut2_clicked();
+
+    void on_pushButton_clicked();
+
 private:
     Ui::newhome2 *ui;
 };

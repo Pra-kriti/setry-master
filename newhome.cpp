@@ -287,5 +287,13 @@ void newhome::on_Yes_clicked()
 
 
 void newhome::on_No_clicked()
-{on_ExistSuper_clicked();
+{
+    on_ExistSuper_clicked();
+}
+
+void newhome::on_LogOut_1_clicked()
+{
+    Widget *wid=new Widget;
+    this->close();
+    wid->showMaximized();
 }
