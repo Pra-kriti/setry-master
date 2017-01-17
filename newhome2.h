@@ -15,13 +15,20 @@ class newhome2 : public QWidget
 public:
     explicit newhome2(QWidget *parent = 0);
     ~newhome2();
+    QString Billno,Date,Panno,Staff,PatientsName,ID,Quantity,Discount;
 
 private slots:
     void on_SearchBar_staff_clicked();
 
     void on_LogOut2_clicked();
 
+
+
+    void on_CreateBill_clicked();
+
     void on_pushButton_clicked();
+
+    void on_addProfile_clicked();
 
 private:
     Ui::newhome2 *ui;

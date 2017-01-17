@@ -36,7 +36,7 @@ public:
 
      bool connOpen()
      {     myDB= QSqlDatabase::addDatabase("QSQLITE");
-           myDB.setDatabaseName("/home/prakriti/Desktop/new5/setry-master/table (1).sqlite");
+           myDB.setDatabaseName("/home/prakriti/Desktop/new1/setry-master/table (1).sqlite");
           if(myDB.open())
                  {
                      qDebug()<<("connected! ");

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>872</width>
-    <height>540</height>
+    <width>916</width>
+    <height>599</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -482,19 +482,6 @@ background-color: rgb(167, 167, 167);
               </item>
              </layout>
             </item>
-            <item row="10" column="0">
-             <widget class="QPushButton" name="LogOut2">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="text">
-               <string>LOG OUT</string>
-              </property>
-             </widget>
-            </item>
             <item row="9" column="0">
              <widget class="QPushButton" name="CreateBill">
               <property name="text">
@@ -505,7 +492,6 @@ background-color: rgb(167, 167, 167);
            </layout>
            <zorder>label_2</zorder>
            <zorder>CreateBill</zorder>
-           <zorder>LogOut2</zorder>
            <zorder>groupBox</zorder>
            <zorder>addProfile</zorder>
           </widget>
@@ -545,6 +531,19 @@ background-color: rgb(167, 167, 167);
             </widget>
            </item>
           </layout>
+         </item>
+         <item row="3" column="0">
+          <widget class="QPushButton" name="LogOut2">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>LOG OUT</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </widget>
