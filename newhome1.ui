@@ -6,14 +6,43 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>761</width>
-    <height>866</height>
+    <width>792</width>
+    <height>1413</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout_3">
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <layout class="QVBoxLayout" name="verticalLayout_15">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="font">
+        <font>
+         <family>Times New Roman</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:48pt; font-weight:600;&quot;&gt;SANJIVANI&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_5">
+       <property name="font">
+        <font>
+         <family>Times New Roman</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:28pt; font-weight:600;&quot;&gt;PHARMACY MANAGEMENT SYSTEM&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
    <item row="1" column="0">
     <widget class="QWidget" name="widget_1" native="true">
      <layout class="QGridLayout" name="gridLayout_2">
@@ -32,7 +61,17 @@
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(182, 181, 184);</string>
+         <string notr="true">QFrame
+{
+background-color: rgb(255, 255, 255);
+}
+QPushButton
+{
+background-color:rgb(103, 111, 255);
+color: rgb(255, 255, 255);
+border-radius:5px;
+border:none;
+}</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::Panel</enum>
@@ -52,12 +91,14 @@
            <property name="font">
             <font>
              <family>Comic Sans MS</family>
+             <pointsize>12</pointsize>
              <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgb(231, 231, 231);</string>
+            <string notr="true">background-color:rgb(103, 111, 255);
+color: rgb(255, 255, 255);</string>
            </property>
            <property name="text">
             <string>UPDATE DATA</string>
@@ -75,10 +116,13 @@
            <property name="font">
             <font>
              <family>Comic Sans MS</family>
-             <pointsize>7</pointsize>
+             <pointsize>12</pointsize>
              <weight>75</weight>
              <bold>true</bold>
             </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
            </property>
            <property name="text">
             <string>MODIFY EXISTING</string>
@@ -96,10 +140,13 @@
            <property name="font">
             <font>
              <family>Comic Sans MS</family>
-             <pointsize>7</pointsize>
+             <pointsize>12</pointsize>
              <weight>75</weight>
              <bold>true</bold>
             </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
            </property>
            <property name="text">
             <string>ADD NEW DRUG</string>
@@ -118,14 +165,13 @@
             <font>
              <family>Comic Sans MS</family>
              <pointsize>12</pointsize>
-             <weight>9</weight>
+             <weight>50</weight>
              <italic>false</italic>
              <bold>false</bold>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgb(231, 231, 231);
-font: 75 12pt &quot;Comic Sans MS&quot;;</string>
+            <string notr="true"/>
            </property>
            <property name="text">
             <string>GO TO STORE</string>
@@ -143,10 +189,13 @@ font: 75 12pt &quot;Comic Sans MS&quot;;</string>
            <property name="font">
             <font>
              <family>Comic Sans MS</family>
-             <pointsize>7</pointsize>
+             <pointsize>12</pointsize>
              <weight>75</weight>
              <bold>true</bold>
             </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
            </property>
            <property name="text">
             <string>VIEW EXISTING STAFF</string>
@@ -164,12 +213,13 @@ font: 75 12pt &quot;Comic Sans MS&quot;;</string>
            <property name="font">
             <font>
              <family>Comic Sans MS</family>
+             <pointsize>12</pointsize>
              <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgb(231, 231, 231);</string>
+            <string notr="true"/>
            </property>
            <property name="text">
             <string>VIEW/ADD STAFF</string>
@@ -178,6 +228,18 @@ font: 75 12pt &quot;Comic Sans MS&quot;;</string>
          </item>
          <item row="11" column="0">
           <widget class="QPushButton" name="BackButton_1">
+           <property name="font">
+            <font>
+             <family>Comic Sans MS</family>
+             <pointsize>12</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(85, 170, 127);
+color: rgb(255, 255, 255);</string>
+           </property>
            <property name="text">
             <string>BACK</string>
            </property>
@@ -194,12 +256,13 @@ font: 75 12pt &quot;Comic Sans MS&quot;;</string>
            <property name="font">
             <font>
              <family>Comic Sans MS</family>
+             <pointsize>12</pointsize>
              <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgb(231, 231, 231);</string>
+            <string notr="true"/>
            </property>
            <property name="text">
             <string>VIEW SALES</string>
@@ -217,10 +280,13 @@ font: 75 12pt &quot;Comic Sans MS&quot;;</string>
            <property name="font">
             <font>
              <family>Comic Sans MS</family>
-             <pointsize>7</pointsize>
+             <pointsize>12</pointsize>
              <weight>75</weight>
              <bold>true</bold>
             </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
            </property>
            <property name="text">
             <string>MODIFY STAFF PROFILE</string>
@@ -238,10 +304,13 @@ font: 75 12pt &quot;Comic Sans MS&quot;;</string>
            <property name="font">
             <font>
              <family>Comic Sans MS</family>
-             <pointsize>7</pointsize>
+             <pointsize>12</pointsize>
              <weight>75</weight>
              <bold>true</bold>
             </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
            </property>
            <property name="text">
             <string>ADD NEW STAFF</string>
@@ -259,10 +328,14 @@ font: 75 12pt &quot;Comic Sans MS&quot;;</string>
            <property name="font">
             <font>
              <family>Comic Sans MS</family>
-             <pointsize>7</pointsize>
+             <pointsize>12</pointsize>
              <weight>75</weight>
              <bold>true</bold>
             </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">
+</string>
            </property>
            <property name="text">
             <string>DELETE FROM STORE</string>
@@ -276,6 +349,18 @@ font: 75 12pt &quot;Comic Sans MS&quot;;</string>
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <family>Comic Sans MS</family>
+             <pointsize>12</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(85, 170, 127);
+color: rgb(255, 255, 255);</string>
            </property>
            <property name="text">
             <string>LOG OUT</string>
@@ -334,7 +419,7 @@ font: 75 12pt &quot;Comic Sans MS&quot;;</string>
            </property>
            <property name="font">
             <font>
-             <family>Comic Sans MS</family>
+             <family>Times New Roman</family>
              <pointsize>26</pointsize>
             </font>
            </property>
@@ -1163,6 +1248,16 @@ font: 75 12pt &quot;Comic Sans MS&quot;;</string>
           </widget>
          </item>
          <item>
+          <widget class="QTableView" name="profitTable"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="ClearSales_2">
+           <property name="text">
+            <string>CLEAR SALES</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="QLabel" name="SearchLabel_1">
            <property name="font">
             <font>
@@ -1222,72 +1317,175 @@ font: 75 12pt &quot;Comic Sans MS&quot;;</string>
         <zorder>Permission_1</zorder>
         <zorder>IDLabel</zorder>
         <zorder>groupBox</zorder>
-        <zorder>ModifyDrugButton</zorder>
-        <zorder>horizontalSpacer_5</zorder>
         <zorder>groupBox_2</zorder>
+        <zorder>profitTable</zorder>
+        <zorder>ClearSales_2</zorder>
        </widget>
       </item>
      </layout>
     </widget>
    </item>
-   <item row="0" column="0">
-    <widget class="QLabel" name="label_1">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>25</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>16777215</width>
-       <height>74</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <family>Comic Sans MS</family>
-       <pointsize>8</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">
-background-color: rgb(167, 167, 167);
+   <item row="2" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout_9">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_10">
+       <item>
+        <spacer name="horizontalSpacer_6">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="expDatebutton_2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <family>Times New Roman</family>
+           <pointsize>12</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton
+{
+background-color: rgb(230, 18, 21);
+color: rgb(255, 255, 255);
+border-radius:5px;
+}
 </string>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Sunken</enum>
-     </property>
-     <property name="lineWidth">
-      <number>7</number>
-     </property>
-     <property name="midLineWidth">
-      <number>1</number>
-     </property>
-     <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:28pt; color:#ffffff;&quot;&gt;SANJIVANI&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-     <property name="wordWrap">
-      <bool>true</bool>
-     </property>
-     <property name="margin">
-      <number>-5</number>
-     </property>
-    </widget>
+         </property>
+         <property name="text">
+          <string>NO EXPIRY ALERT</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="StockButton_2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <family>Times New Roman</family>
+           <pointsize>12</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton
+{
+background-color: rgb(230, 18, 21);
+color: rgb(255, 255, 255);
+border-radius:5px;
+}
+</string>
+         </property>
+         <property name="text">
+          <string>NO OUT OF STOCK</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_7">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_9">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>58</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QDateTimeEdit" name="dateTimeEdit_3">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Comic Sans MS</family>
+         <pointsize>12</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::NoContextMenu</enum>
+       </property>
+       <property name="accessibleName">
+        <string notr="true"/>
+       </property>
+       <property name="accessibleDescription">
+        <string notr="true"/>
+       </property>
+       <property name="locale">
+        <locale language="English" country="UnitedStates"/>
+       </property>
+       <property name="inputMethodHints">
+        <set>Qt::ImhNone</set>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="buttonSymbols">
+        <enum>QAbstractSpinBox::NoButtons</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_8">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>58</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
    </item>
   </layout>
  </widget>

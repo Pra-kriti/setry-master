@@ -2,6 +2,8 @@
 #include "newhome.h"
 #include "newsuper.h"
 #include "ui_newhome.h"
+#include "expdate.h"
+#include "stock.h"
 #define deflabel "HOVER OVER THE BUTTONS \n FOR MORE INFORMATION "
 newhome::newhome(QWidget *parent) :
     QWidget(parent),
@@ -11,8 +13,57 @@ newhome::newhome(QWidget *parent) :
     ui->setupUi(this);
     this->showMaximized();
     ui->Permission->hide();
+    ui->ClearSales->hide();
     ui->Yes->hide();
+       ui->dateTimeEdit->setDateTime(QDateTime::currentDateTime());
+
+     QDate date;
+     date=date.currentDate();
+     int day=date.day();
+     Widget conn;
+     conn.connOpen();
+     QSqlQuery *qry=new QSqlQuery(conn.myDB);
+     QSqlQueryModel *modal=new QSqlQueryModel;
+
+    QSqlQueryModel *modal2=new QSqlQueryModel;
+     QSqlQueryModel *modal1=new QSqlQueryModel;
+     qry->prepare("SELECT* FROM [table] WHERE EXPDATE<=(SELECT DATE(\'NOW\','+1 MONTH'))");
+     qry->exec();
+     modal->setQuery(*qry);
+     if(modal->rowCount()>0)
+     {
+        ui->expDateButton->setText("EXPIRY ALERT");
+     }
+     qry->prepare("SELECT* FROM [table] WHERE QUANTITY<=\'10\'");
+     qry->exec();
+     if(modal2->rowCount()>0)
+     {
+         ui->StockButton->setText("OUT OF STOCK ALERT!");
+     }
+     if(day==01||day==1)
+     {
+         qry->prepare("SELECT* FROM [table] WHERE SEEN=\'NO\'");
+         qry->exec();
+         modal1->setQuery(*qry);
+       //  qDebug()<<"rrr"<<modal->rowCount();
+         if (modal1->rowCount()!=0)
+
+        {
+             QMessageBox::warning(this,"MONTHLY UPDATES","THE VIEW SALES CALCULATIONS  FOR THIS MONTH ARE READY.\n CLICK TO VISIT AND START NEW MONTH CALCULATIONS ");
+             qry->prepare("UPDATE [table] SET SEEN=\'YES\' WHERE SEEN=\'NO\'");
+             qry->exec();
+
+             on_VS_clicked();
+         }
+     }
+     else
+     {
+         qry->prepare("UPDATE [table] SET SEEN=\'NO\' WHERE SEEN=\'YES\'");
+         qry->exec();
+     }
+     conn.connClose();
     ui->No->hide();
+    ui->profitTable->hide();
     ui->SuperImage->hide();
     ui->ExistSuper->hide();
     ui->ChangeSuper->hide();
@@ -193,11 +244,14 @@ void newhome::on_BackButton_clicked()
 
 void newhome::on_GTS_clicked()
 {
+    ui->profitTable->hide();
     ui->BackButton->show();
     ui->ViewSuper->hide();
     ui->ViewStaff->hide();
     ui->VS->hide();
+    UpdateSel=1;
     update3();
+
 }
 void newhome::update3()
 {
@@ -217,14 +271,43 @@ void newhome::update3()
     ui->tableView->setStyleSheet("background-color:rgb(231, 231, 231)");
     Widget conn;
     QSqlQueryModel * modal=new QSqlQueryModel();
-            conn.connOpen();
-            QSqlQuery *qry=new QSqlQuery(conn.myDB);
-    qry->prepare("SELECT* FROM [table]");
-    qry->exec();
-    qDebug()<<(qry->size());
-    modal->setQuery(*qry);
-    ui->tableView->setModel(modal);
-    ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    conn.connOpen();
+    QSqlQuery *qry=new QSqlQuery(conn.myDB);
+     QSqlQuery *qry1=new QSqlQuery(conn.myDB);
+    if(UpdateSel==1)
+    {
+        ui->ClearSales->hide();
+        ui->profitTable->hide();
+        qry->prepare("SELECT ID,ITEMSNAME_1,LOCATION_NAME,QUANTITY,EXPDATE,CP_RATE,CP_AMOUNT,SP_RATE,SP_AMOUNT FROM [table] GROUP BY ID");
+        qry->exec();
+        modal->setQuery(*qry);
+        ui->tableView->setModel(modal);
+        ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+        ui->tableView->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    }
+    else if(UpdateSel==2)
+    {
+        ui->profitTable->show();
+        ui->ClearSales->show();
+        QSqlQueryModel *modal1=new QSqlQueryModel;
+        qry->prepare("SELECT ID,ITEMSNAME_1,LOCATION_NAME,CP_RATE,SP_RATE,QUANTITY,QUANTITIES_SOLD,EXPECTED_CPAMT,EXPECTED_SPAMT,ACT_SPAMT,PROFIT FROM [table] GROUP BY ID");
+        qry->exec();
+        modal->setQuery(*qry);
+        ui->tableView->setModel(modal);
+        ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+        ui->tableView->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+        qry1->prepare("SELECT SUM([table].EXPECTED_CPAMT) AS TOTAL_EXP_CPAMT,sum([table].EXPECTED_SPAMT) AS TOTAL_EXP_SPAMT,sum([table].ACT_SPAMT) AS TOTAL_ACT_SPAMT,sum([table].PROFIT) AS TOTAL_PROFIT FROM [table]");
+        qry1->exec();
+        modal1->setQuery(*qry1);
+        ui->profitTable->setModel(modal1);
+        ui->profitTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+        ui->profitTable->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+
+       //qDebug()<<"try";
+    }
+       else{}
+        qDebug()<<(qry->size());
+
     conn.connClose();
     qDebug()<<(modal->rowCount());
 }
@@ -296,4 +379,42 @@ void newhome::on_LogOut_1_clicked()
     Widget *wid=new Widget;
     this->close();
     wid->showMaximized();
+}
+
+void newhome::on_VS_clicked()
+{
+    ui->BackButton->show();
+    ui->ViewSuper->hide();
+    ui->ViewStaff->hide();
+    ui->GTS->hide();
+
+     UpdateSel=2;
+    update3();
+
+}
+
+void newhome::on_ClearSales_clicked()
+{
+    Widget conn;
+    conn.connOpen();
+    QSqlQuery *qry=new QSqlQuery(conn.myDB);
+    qry->prepare("UPDATE [table] SET QUANTITIES_SOLD=\'0\',PROFIT=\'0\',EXPECTED_SPAMT=\'0\',EXPECTED_CPAMT=\'0\',ACT_SPAMT=\'0\'");
+    qry->exec();
+    conn.connClose();
+    on_VS_clicked();
+
+}
+
+void newhome::on_expDateButton_clicked()
+{
+    ExpDate *exp=new ExpDate;
+    exp->setModal(true);
+    exp->exec();
+}
+
+void newhome::on_StockButton_clicked()
+{
+   Stock *stock=new Stock;
+    stock->setModal(true);
+    stock->exec();
 }

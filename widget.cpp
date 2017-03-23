@@ -4,6 +4,9 @@
 #include "newhome1.h"
 #include "newhome2.h"
 #include <QTimer>
+#include <QDateTime>
+#include<QDate>
+#include <QSqlQueryModel>
 
 
 Widget::Widget(QWidget *parent) :
@@ -12,6 +15,29 @@ Widget::Widget(QWidget *parent) :
 {
     ui->setupUi(this);
      QTimer:: singleShot(5000,this,SLOT(showMaximized()));
+    ui->dateTimeEdit->setDateTime(QDateTime::currentDateTime());
+    ui->expLabel->hide();
+
+    connOpen();
+    QSqlQuery *qry=new QSqlQuery(this->myDB);
+    QSqlQueryModel *modal=new QSqlQueryModel;
+    QSqlQueryModel *modal1=new QSqlQueryModel;
+    qry->prepare("SELECT* FROM [table] WHERE EXPDATE<=(SELECT DATE(\'NOW\','+15 DAYS'))");
+    qry->exec();
+
+    modal->setQuery(*qry);
+    if(modal->rowCount()>0)
+    {
+        ui->expLabel->show();
+    }
+    qry->prepare("SELECT* FROM [table] WHERE QUANTITY<=\'10\'");
+    qry->exec();
+    if(modal1->rowCount()>0)
+    {
+        ui->StockLabel->show();
+    }
+    connClose();
+
 }
 
 Widget::~Widget()
@@ -36,22 +62,29 @@ void Widget::on_AdminButton_clicked()
 bool Widget::checkdb()
 {
 
-    connOpen();
+   connOpen();
     QSqlQuery qry;
     if(qry.exec("SELECT username,password,role FROM login WHERE username=\'"+Username+"\' AND password=\'"+Password+"\' AND role=\'"+Role+"\' "))
     {
         if(qry.next())
         {
             ui->Status->setText("[+]VALID USERNAME AND PASSWORD");
-            return true;
+           return true;
         }
         else
         {
             ui->Status->setText("   UNKNOWN USERNAME AND PASSWORD      ");
-            return false;
+         return false;
         }
 
     }
+   else
+   {
+      // qDebug()<<"sorry";
+       this->close();
+       return false;
+   }
+
 }
 
 void Widget::on_SuperButton_clicked()

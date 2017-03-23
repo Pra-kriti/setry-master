@@ -150,8 +150,8 @@
   <zorder>label</zorder>
   <zorder>label_2</zorder>
   <zorder>label_3</zorder>
-  <zorder>horizontalSpacer</zorder>
-  <zorder>horizontalSpacer_2</zorder>
+
+
  </widget>
  <resources/>
  <connections/>

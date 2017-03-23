@@ -4,5 +4,13 @@
         <file>SAN.png</file>
         <file>table (1).sqlite</file>
         <file>2017-09-1--01-10-09a.png</file>
+        <file>../../images.jpeg</file>
+        <file>../../index.jpeg</file>
+        <file>PicsArt_02-10-12.48.02.jpg</file>
+        <file>../../../Downloads/1-3_low.jpg</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>../../images.jpeg</file>
+        <file>PicsArt_02-10-12.48.02.jpg</file>
     </qresource>
 </RCC>

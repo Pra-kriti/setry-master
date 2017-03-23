@@ -25,6 +25,7 @@ class Widget : public QWidget
 public:
     explicit Widget(QWidget *parent = 0);
       QSqlDatabase myDB;
+      int seen=0;
     QString Role;
      QString Username, Password;
 
@@ -36,10 +37,10 @@ public:
 
      bool connOpen()
      {     myDB= QSqlDatabase::addDatabase("QSQLITE");
-           myDB.setDatabaseName("/home/prakriti/Desktop/new1/setry-master/table (1).sqlite");
+           myDB.setDatabaseName("/home/prakriti/Desktop/new/sanjivani-v1.2-master/table (1).sqlite");
           if(myDB.open())
                  {
-                     qDebug()<<("connected! ");
+                     qDebug()<<(" connected! ");
                      return true;
                  }
 
@@ -47,6 +48,10 @@ public:
              else
              {
                  qDebug()<<("Failure connection to db file");
+                 connClose();
+                 QMessageBox::warning(this,"DATABASE UNRECOGNIZED","FAILURE CONNECTION TO DATABASE");
+                 exit(0);
+                // close();
                  return false;
              }
      }

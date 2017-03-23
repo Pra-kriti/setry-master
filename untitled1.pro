@@ -18,21 +18,27 @@ SOURCES += main.cpp\
     newhome2.cpp \
     newhome1.cpp \
     newsuper.cpp \
-    bill.cpp
+    bill.cpp \
+    expdate.cpp \
+    stock.cpp
 
 HEADERS  += widget.h \
     newhome.h \
     newhome2.h \
     newhome1.h \
     newsuper.h \
-    bill.h
+    bill.h \
+    expdate.h \
+    stock.h
 
 FORMS    += widget.ui \
     newhome.ui \
     newhome2.ui \
     newhome1.ui \
     newsuper.ui \
-    bill.ui
+    bill.ui \
+    expdate.ui \
+    stock.ui
 
 RESOURCES += \
     sanj2.qrc

@@ -15,10 +15,10 @@ class newhome1 : public QWidget
 public:
     QString ID,FName,LName,Address,Age,Sex,Contact,Salespoint,modID,field;
 
-    QString ID_1,Quantity,ExpDate,CPR,CPA,SPR,SPA,Itemsname,Location_Name,NewUser,NewPass;
+    QString ID_1,Quantity,ExpDate1,CPR,CPA,SPR,SPA,Itemsname,Location_Name,NewUser,NewPass;
 public:
     explicit newhome1(QWidget *parent = 0);
-    int selector,selectorUpdate;
+    int selector,selectorUpdate,UpdateSel;
     ~newhome1();
 
 private slots:
@@ -59,6 +59,14 @@ private slots:
     void on_selector_clicked();
 
     void on_ModifyDrugButton_clicked();
+
+    void on_VS_1_clicked();
+
+    void on_ClearSales_2_clicked();
+
+    void on_expDatebutton_2_clicked();
+
+    void on_StockButton_2_clicked();
 
 private:
     Ui::newhome1 *ui;

@@ -30,6 +30,10 @@ private slots:
 
     void on_addProfile_clicked();
 
+    void on_StockButton_clicked();
+
+    void on_ExpAlertButton_clicked();
+
 private:
     Ui::newhome2 *ui;
 };

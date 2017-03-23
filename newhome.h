@@ -14,7 +14,8 @@ class newhome : public QWidget
 
 public:
     explicit newhome(QWidget *parent = 0);
-    int selector;// selects choise of sreen for search
+    int seen=0;
+    int selector,UpdateSel;// selects choise of sreen for search
     ~newhome();
 
 private slots:
@@ -36,6 +37,16 @@ private slots:
     void on_No_clicked();
 
     void on_LogOut_1_clicked();
+
+    void on_VS_clicked();
+
+    void on_ClearSales_clicked();
+
+    void on_expDateButton_clicked();
+
+    void on_StockButton_clicked();
+
+
 
 public slots:
     void on_ExistSuper_clicked();
